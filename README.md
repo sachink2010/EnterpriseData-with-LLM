@@ -11,11 +11,9 @@ This solution will enable enterprises to create a lot of business use-cases like
   
 ![AnimatedImage](https://github.com/sachink2010/EnterpriseData-with-LLM/assets/4855287/e6e83c11-478c-404c-8a86-4cdf0d11087e)
 
-If you want to read more about architecture choices made here, please read Medium Blog. 
+If you want to read more about architecture choices made here, please read Medium Blog https://medium.com/@Sachin.Kulkarni.NL/generative-ai-with-enterprise-data-3c81a8bffaf2. 
 
 Here are steps to implement this solution:
-
-
 
 1.	Login to your AWS Account, select any region (for e.g. Ireland (eu-west-1)) as the region and navigate to Amazon SageMaker Management Console. Click on Studio link in the left and then click on the Open Studio link.
    <img width="308" alt="image" src="https://github.com/sachink2010/EnterpriseData-with-LLM/assets/4855287/77e94527-038b-4bb4-bdc0-eb769715335f">
