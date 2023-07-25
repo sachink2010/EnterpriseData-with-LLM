@@ -19,7 +19,7 @@ Here are steps to implement this solution:
    <img width="308" alt="image" src="https://github.com/sachink2010/EnterpriseData-with-LLM/assets/4855287/77e94527-038b-4bb4-bdc0-eb769715335f">
 
 3.	It will launch Amazon SageMaker Studio in a new browser window or tab. In the studio, click on File in the top menu. Next Open Terminal
-4. 	It will open Terminal tab. You can git clone here to download repository: https://github.com/sachink2010/EnterpriseData-with-LLM
+4. 	It will open Terminal tab. You can type in: git clone https://github.com/sachink2010/EnterpriseData-with-LLM
 5. 	
 
 
