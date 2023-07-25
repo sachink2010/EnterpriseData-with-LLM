@@ -32,3 +32,10 @@ In Terminal tab. You can type in: git clone https://github.com/sachink2010/Enter
 - Create a Lambda function in your AWS account- with Python 3.7
 - Add a layer to Lambda function, copy zip file in the folder src/Lambda/Layer
 - Copy code from src/Lambda/Lambda_function.py to your file
+  
+<b> Set up your Kendra Index </b>
+Using AWS Console:
+- Upload files in Bank Financial Statements folder to your S3 folder
+- Create a Kendra Index
+- Add data source as S3 bucket, set up sync as periodic, based on your needs
+- Follow steps as shown in src/CreateKendraIndex Folder
