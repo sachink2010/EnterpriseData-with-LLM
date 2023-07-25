@@ -13,13 +13,17 @@ This solution will enable enterprises to create a lot of business use-cases like
 
 If you want to read more about architecture choices made here, please read Medium Blog https://medium.com/@Sachin.Kulkarni.NL/generative-ai-with-enterprise-data-3c81a8bffaf2. 
 
+Architecture of solution:
+
+
 Here are steps to implement this solution:
 
-1.	Login to your AWS Account, select any region (for e.g. Ireland (eu-west-1)) as the region and navigate to Amazon SageMaker Management Console. Click on Studio link in the left and then click on the Open Studio link.
+<b> Set up your AWS Sagemaker Studio environment and Git Clone</b>
+- Login to your AWS Account, select any region (for e.g. Ireland (eu-west-1)) as the region and navigate to Amazon SageMaker Management Console. Click on Studio link in the left and then click on the Open Studio link.
    <img width="308" alt="image" src="https://github.com/sachink2010/EnterpriseData-with-LLM/assets/4855287/77e94527-038b-4bb4-bdc0-eb769715335f">
 
-3.	It will launch Amazon SageMaker Studio in a new browser window or tab. In the studio, click on File in the top menu. Next Open Terminal
-4. 	It will open Terminal tab. You can type in: git clone https://github.com/sachink2010/EnterpriseData-with-LLM
-5. 	
+- It will launch Amazon SageMaker Studio in a new browser window or tab. In the studio, click on File in the top menu. Next Open Terminal
+In Terminal tab. You can type in: git clone https://github.com/sachink2010/EnterpriseData-with-LLM
 
-
+<b> Set up your Lambda Function</b>
+- Create a Lambda function in your AWS account
