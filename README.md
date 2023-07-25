@@ -15,6 +15,9 @@ If you want to read more about architecture choices made here, please read Mediu
 
 Architecture of solution:
 
+<img width="935" alt="image" src="https://github.com/sachink2010/EnterpriseData-with-LLM/assets/4855287/ba0fcfbc-67da-4781-840c-a6afd8c3525a">
+
+
 
 Here are steps to implement this solution:
 
