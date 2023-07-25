@@ -1,3 +1,5 @@
+Python dependencies/boto3-1.26.140-py3-none-any.whl
+Python dependencies/botocore-1.29.140-py3-none-any.whl
 aiohttp==3.8.4
 aiosignal==1.3.1
 altair==4.2.2
