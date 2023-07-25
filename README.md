@@ -26,4 +26,6 @@ Here are steps to implement this solution:
 In Terminal tab. You can type in: git clone https://github.com/sachink2010/EnterpriseData-with-LLM
 
 <b> Set up your Lambda Function</b>
-- Create a Lambda function in your AWS account
+- Create a Lambda function in your AWS account- with Python 3.7
+- Add a layer to Lambda function, copy zip file in the folder src/Lambda/Layer
+- Copy code from src/Lambda/Lambda_function.py to your file
