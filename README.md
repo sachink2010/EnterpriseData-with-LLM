@@ -21,21 +21,41 @@ Architecture of solution:
 
 Here are steps to implement this solution:
 
-<b> Set up your AWS Sagemaker Studio environment and Git Clone</b>
+<b> 1. Set up your AWS Sagemaker Studio environment and Git Clone</b>
 - Login to your AWS Account, select any region (for e.g. Ireland (eu-west-1)) as the region and navigate to Amazon SageMaker Management Console. Click on Studio link in the left and then click on the Open Studio link.
    <img width="308" alt="image" src="https://github.com/sachink2010/EnterpriseData-with-LLM/assets/4855287/77e94527-038b-4bb4-bdc0-eb769715335f">
 
 - It will launch Amazon SageMaker Studio in a new browser window or tab. In the studio, click on File in the top menu. Next Open Terminal
 In Terminal tab. You can type in: git clone https://github.com/sachink2010/EnterpriseData-with-LLM
 
-<b> Set up your Lambda Function</b>
-- Create a Lambda function in your AWS account- with Python 3.7
-- Add a layer to Lambda function, copy zip file in the folder src/Lambda/Layer
-- Copy code from src/Lambda/Lambda_function.py to your file
   
-<b> Set up your Kendra Index </b>
+<b> 2. Set up your Kendra Index </b>
 Using AWS Console:
 - Upload files in Bank Financial Statements folder to your S3 folder
 - Create a Kendra Index
 - Add data source as S3 bucket, set up sync as periodic, based on your needs
 - Follow steps as shown in src/CreateKendraIndex Folder
+
+<b> 3. Set up your Lambda Function</b>
+- Create a Lambda function in your AWS account- with Python 3.7
+- Add a layer to Lambda function, copy zip file in the folder src/Lambda/Layer
+- Copy code from src/Lambda/Lambda_function.py to your file
+- Add Kendra Index Id to Lambda function
+  
+<b> 4. Run your Streamlit app in SageMaker Studio terminal and start using the app</b>
+- In SageMaker Terminal window type streamlit run streamlit run ./EnterpriseData-with-LLM/src/streamlit/Kendra-RAG-StreamlitApp.py --server.port 6006
+- You will see that Streamlit App is running message in your Terminal session
+<img width="924" alt="image" src="https://github.com/sachink2010/EnterpriseData-with-LLM/assets/4855287/7afd3d39-2a34-421b-bdc1-ad6d08faeef8">
+
+- Copy your Sagemaker domain id, your region where SageMaker Studio is running and Streamlit Port from previous step
+- In a new same browser window in a new tab, open link: 
+https://studio-id.studio.region.sagemaker.aws/jupyter/default/proxy/port/
+For e.g.:
+https://d-1n8b7wqrjeyx.studio.eu-west-1.sagemaker.aws/jupyter/default/proxy/6006/
+
+- Start using the app
+  <img width="833" alt="image" src="https://github.com/sachink2010/EnterpriseData-with-LLM/assets/4855287/2f6d1c32-c865-438d-a693-e36520086689">
+
+
+
+
