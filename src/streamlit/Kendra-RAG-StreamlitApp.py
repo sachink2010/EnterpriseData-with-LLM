@@ -31,8 +31,9 @@ if language == "nl":
 else:
     st.set_page_config(page_title="Document Analysis (Model: Bedrock-Anthropic Claude-Instant)", page_icon=":robot:", layout="wide")
     st.header("Chat with your Financial Documents- Annual Reports 📄")
-    
+
 boto3_bedrock = boto3.client("bedrock-runtime", "us-east-1")
+kendra = boto3.client("kendra", "us-east-1")
 
 inference_modifier = {"max_tokens_to_sample":4096, 
                       "temperature":0.1,
@@ -94,19 +95,26 @@ with container:
     #  and later save the chat history
     if submit_button and user_input:
         print(f"user_input: {user_input}")
-        params = { "user_query": user_input,
-                   "kendra_index_id": kendra_index_id,
-                   "language": language}
+        
+        result = kendra.retrieve(
+            IndexId = kendra_index_id,
+            QueryText = user_input,
+            AttributeFilter = {
+            "EqualsTo": {      
+                "Key": "_language_code",
+                "Value": {
+                    "StringValue": language
+                    }
+                }
+            })
 
-        #invoke lambda function KendraRAGLambda, get response and parse the response to a variable user_input_rag
-        response = lambda_client.invoke(FunctionName="KendraRAGLambda",
-                                        InvocationType="RequestResponse",
-                                        Payload=json.dumps(params)
-                                        )
-        #Response Payload is in byte format, so we parse the response payload body to a variable kendra_rag
-        json_response = response["Payload"].read()
-        y = json.loads(json_response)
-        context = y["body"]
+        print("context:    Found {} snippets in Kendra".format(len(result["ResultItems"])))
+        theexcerpt = ""
+        for item in result["ResultItems"]:
+            theexcerpt = theexcerpt + "\n" + item["Content"]
+    #    context = "Context:" + thenewline + theexcerpt + thenewline 
+        context = theexcerpt
+        
 #        print("response is: " + str(kendra_rag))
 
         #Prompt to LLM= context (based on user_input) and relevant passages from Kendra+ "Question"- user_input+ "Answer:"
